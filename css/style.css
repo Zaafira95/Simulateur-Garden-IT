@@ -3,9 +3,11 @@
 h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text-transform: uppercase; }
 .formulaire{text-align: center;}
 .logo{width: 40%;}
-.logo-pdf{ float: right;width: 30%; position: relative;
-    top: 0.5em; right: 0.5em; }
+.logo-pdf{ float: right;width: 20%; position: relative;
+    top: 1.5em; right: 3em; }
 #nom-prenom-aff{font-size: 250%; font-weight: bold;}
+h3 {font-weight: bold;}
+#trait{width: 30%; border-bottom: black 2px solid;}
 .header{flex:1; }
 
 
@@ -14,12 +16,13 @@ h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text
 table { font-size: 100%; table-layout: fixed; width: 100%; background-color: rgb(223, 245, 241); padding: 0.5em;}
 table { border-collapse: separate; border-spacing: 0px; }
 th, td { border-width: 0px; padding: 0.5em; position: relative; text-align: left; }
+td.ratio{padding: 0em}
 th, td { border-radius: 0em; border-style: solid; }
 
 td { border-color: #DDD;}
 th {border-bottom: #000000 2px solid;}
 td.ratio{ border-bottom: #000000 2px solid; border-top: #000000 2px solid; }td { border-color: #DDD; }
-td.separation{ border-right: #000000 2px solid; font-weight: bold; }
+td.separation{ border-right: #000000 3px solid; font-weight: bold; margin-top: 3em;}
 
 .tbody2 {border-width: #000000 1px solid;}
 
@@ -46,7 +49,7 @@ header input { cursor: pointer; -ms-filter:"progid:DXImageTransform.Microsoft.Al
 
 /* article */
 
-article, article address, table.meta, table.inventory { margin: 0 0 3em; }
+article, article address, table.meta, table.inventory { margin: 0 0 1em; }
 article:after { clear: both; content: ""; display: table; }
 article h1 { clip: rect(0 0 0 0); position: absolute; }
 
