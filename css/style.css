@@ -3,7 +3,10 @@
 h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text-transform: uppercase; }
 .formulaire{text-align: center;}
 .logo{width: 40%;}
+.logo-pdf{ float: right;width: 30%; position: relative;
+    top: 0.5em; right: 0.5em; }
 #nom-prenom-aff{font-size: 250%; font-weight: bold;}
+.header{flex:1; }
 
 
 /* table */
