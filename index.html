@@ -20,7 +20,7 @@
 
         <img src="logoGardenIT.png" class="logo"> <br>
         
-        <div><span id="marge-pot" style="font-weight: bold; color: darkblue;"></span></div><br>
+        <div><span id="marge-pot" style="font-weight: bold;color: darkblue;"></span></div><br>
 
         <label >Nom Prénom</label>
         <div> <input type="text" value=""
@@ -28,11 +28,11 @@
 
         <label >Taux Garden IT</label>
         <div> <input type="number" value="0.59"
-                maxlength="256" data-name="" placeholder="" id="taux-garden-it"> </div><br>
+                maxlength="256" data-name="" placeholder="" id="taux-garden-it" onkeyup="afficher()"> </div><br>
 
         <label >Taux EUR/CHF</label>
         <div> <input type="number" value="1.03"
-                maxlength="256" data-name="" placeholder="" id="taux-eur-chf"> </div><br>
+                maxlength="256" data-name="" placeholder="" id="taux-eur-chf" onkeyup="afficher()"> </div><br>
 
         <label >Catégorie</label>
         <div><select id="categorie">
@@ -58,22 +58,20 @@
         </select><br><br></div>
 
         <label >Age</label>
-        <div> <input type="number" value="38"
-                maxlength="256" data-name="" placeholder="" id="age"> </div><br>
+        <div> <input type="number" value=""
+                maxlength="256" data-name="" placeholder="" id="age" onkeyup="afficher()"> </div><br>
 
         <label >TJM</label>
-        <div> <input type="number" value="588"
-                maxlength="256" data-name="" placeholder="" id="tjm"> </div><br>
+        <div> <input type="number" value=""
+                maxlength="256" data-name="" placeholder="" id="tjm" onkeyup="afficher()"> </div><br>
 
         <label >Jours travaillés</label>
         <div> <input type="number" value="20"
-                maxlength="256" data-name="" placeholder="" id="nbJours"> </div><br>
+                maxlength="256" data-name="" placeholder="" id="nbJours" onkeyup="afficher()"> </div><br>
 
         <label >Distance Domicile / Travail (A/R en km)</label>
-        <div> <input type="number" value="60"
-                maxlength="256" data-name="" placeholder="" id="distance"> </div><br>
-               
-        <button type="button" onclick="afficher();" id="btn2">Marge</button>
+        <div> <input type="number" value="0"
+                maxlength="256" data-name="" placeholder="" id="distance" onkeyup="afficher()"> </div><br>
         
         <button type="button" onclick="afficherPdf();" id="btn">Simuler</button>
 
@@ -420,9 +418,10 @@
       let margePotPourcent2 = margePotAffacturage/caEUR;
       let margePotPourcent2Arr = margePotPourcent2.toFixed(4);
 
-      
-      document.getElementById('marge-pot').innerHTML = "Marge potentielle : " + margePotPourcentArr*100 +" %";
+      if((tauxGardenIT!="")&&(tauxEurChf!="")&&(age!="")&&(tjmEUR!="")&&(nbJours!="")&&(distance!="")){
 
+         document.getElementById('marge-pot').innerHTML = "Marge potentielle : " + margePotPourcentArr*100 +" %";
+      }
       /* Affichage partie consultant */
       document.getElementById('nom-prenom-aff').innerHTML = nomPrenom;
       document.getElementById('tjm-aff').innerHTML = tjmEUR;
