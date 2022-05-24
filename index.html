@@ -7,6 +7,9 @@
   <script src="taux-impot.js"></script>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="css/style.css" rel="stylesheet" >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -112,7 +115,7 @@
             <td style="font-weight: bold;" ><span id="frais-repas-eur"></span></td>
         </tr>
         <tr>
-            <td>Impôts (catégorie d'imposition : <span id="categorie">test</span> )</td>
+            <td>Impôts (catégorie d'imposition : <span id="categorie-aff">test</span> )</td>
             <td class="separation"  ><span id="impot-chf"></span></td>
             <td style="font-weight: bold;" ><span id="impot-eur"></span></td>
         </tr>
@@ -428,6 +431,8 @@
       
       document.getElementById('impot-eur').innerHTML = retImpotEURArr;
       document.getElementById('impot-chf').innerHTML = retImpotCHFArr;
+      
+      document.getElementById('categorie-aff').innerHTML = categorie;
       
       document.getElementById('frais-repas-eur').innerHTML = fraisRepasEURArr;
       document.getElementById('frais-repas-chf').innerHTML = fraisRepasCHFArr;
