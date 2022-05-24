@@ -18,6 +18,8 @@ th {border-bottom: #000000 2px solid;}
 td.ratio{ border-bottom: #000000 2px solid; border-top: #000000 2px solid; }td { border-color: #DDD; }
 td.separation{ border-right: #000000 2px solid; font-weight: bold; }
 
+.tbody2 {border-width: #000000 1px solid;}
+
 body { box-sizing: border-box; height: 11in; margin: 0 auto; /*overflow: hidden;*/ padding: 0.5in; width: 7.5in; }
 body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5); }
 
