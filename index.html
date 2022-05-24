@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Simulateur Garden IT</title>
+	<title>HTML TO PDF</title>
 	<script src="js/jquery.min.js"></script>
   <script src="taux-impot.js"></script>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,7 +15,7 @@
             
     <div class="formulaire">
 
-        <img src="https://raw.githubusercontent.com/Zaafira95/Simulateur-Garden-IT/main/logoGardenIT.png" class="logo"> <br>
+        <img src="logoGardenIT.png" class="logo"> <br>
 
         <label >Nom Prénom</label>
         <div> <input type="text" value="NOM Prénom"
@@ -75,13 +75,16 @@
 
 <div id="invoice" style="display: none;">
   <button> <a  href="javascript:void(0)" class="btn-download">Télécharger le PDF  </a></button>
-  <button><a  href="javascript:void(0)" class="btn-download-2">Informations du consultant  </a></button>
+  <button><a  href="javascript:void(0)" class="btn-download-2">Détails de la simulation  </a></button>
   <div id="pdf">
-    <div>
-      <h3 id="nom-prenom-aff">NOM PRENOM</h3>
-      <h3>TJM : <span id="tjm-aff"></span> €</h3>
-      <h3><span>SIMULATION SUR 20J</span></h3>
-    </div>
+    <div class="header">
+      <img class="logo-pdf" src="data:image/jpeg;base64,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" class="logo"> <br>
+    
+      <div>
+        <h3 id="nom-prenom-aff">NOM PRENOM</h3>
+        <h3 style="flex:1;">TJM : <span id="tjm-aff"></span> €</h3>
+        <h3><span>SIMULATION SUR 20J</span></h3>
+      </div></div>
     <article>
            <br><br>     
       <table class="inventory">
@@ -148,7 +151,7 @@
 <div id="invoice2" style="display: none;">
   <div id="pdf2">
     <div>
-      <h3>Simulation de <span id="nom-prenom-aff-2"></span></h3>
+      <h3>Détails de la simulation de <span id="nom-prenom-aff-2"></span></h3>
     </div>
     <article>
            <br><br>     
@@ -204,9 +207,30 @@
 
 <script>
 
-    const options = {
+    let nomPrenom = document.getElementById('nom-prenom').value;
+    let tjmEUR = document.getElementById('tjm').value;
+    let date = new Date();
+    const options1 = {
+      
       margin: 0.5,
-      filename: 'invoice.pdf',
+      filename: nomPrenom+"_"+tjmEUR+"_"+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+'.pdf',
+      image: { 
+        type: 'svg', 
+        quality: 500
+      },
+      html2canvas: { 
+        scale: 1 
+      },
+      jsPDF: { 
+        unit: 'in', 
+        format: 'letter', 
+        orientation: 'portrait' 
+      }
+    }
+    const options2 = {
+      
+      margin: 0.5,
+      filename: "details-simulation-"+nomPrenom+"_"+tjmEUR+"_"+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+'.pdf',
       image: { 
         type: 'svg', 
         quality: 500
@@ -224,13 +248,13 @@
     $('.btn-download').click(function(e){
       e.preventDefault();
       const element = document.getElementById('pdf');
-      html2pdf().from(element).set(options).save();
+      html2pdf().from(element).set(options1).save();
     });
 
     $('.btn-download-2').click(function(e){
       e.preventDefault();
       const element = document.getElementById('pdf2');
-      html2pdf().from(element).set(options).save();
+      html2pdf().from(element).set(options2).save();
     });
 
 
