@@ -18,7 +18,7 @@
         <img src="logoGardenIT.png" class="logo"> <br>
 
         <label >Nom Prénom</label>
-        <div> <input type="text" value="Test"
+        <div> <input type="text" value="NOM Prénom"
                 maxlength="256" data-name="" placeholder="" id="nom-prenom" required=""> </div><br>
 
         <label >Taux Garden IT</label>
@@ -74,7 +74,8 @@
 </form>
 
 <div id="invoice" style="display: none;">
-  <a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
+  <button> <a  href="javascript:void(0)" class="btn-download">Télécharger le PDF  </a></button>
+  <button><a  href="javascript:void(0)" class="btn-download-2">Informations du consultant  </a></button>
   <div id="pdf">
     <div>
       <h3 id="nom-prenom-aff">NOM PRENOM</h3>
@@ -144,6 +145,57 @@
   </div>
 </div>
 
+<div id="invoice2" style="display: none;">
+  <div id="pdf2">
+    <div>
+      <h3>Simulation de <span id="nom-prenom-aff-2"></span></h3>
+    </div>
+    <article>
+           <br><br>     
+      <table class="inventory2">
+        <tbody>
+        <tr>
+            <td>Age</td>
+            <td style="font-weight: bold;; font-size: 130%;" ><span id="age-aff"></span></td>
+        </tr>
+        <tr>
+            <td>TJM</td>
+            <td style="font-weight: bold;; font-size: 130%;" ><span id="tjm-aff-2"></span> €</td>
+        </tr>
+        <tr>
+            <td>Jours travaillés</td>
+            <td style="font-weight: bold;; font-size: 130%;" ><span id="nb-jours-aff"></span></td>
+        </tr>
+        <tr>
+            <td>Distance Domicile/Travail (A/R en km)</td>
+            <td style="font-weight: bold;; font-size: 130%;" ><span id="distance-aff"></span> km</td>
+        </tr>
+        <tr>
+            <td>Catégorie</td>
+            <td style="font-weight: bold; font-size: 130%;" ><span id="categorie-aff-2"></span></td>
+        </tr>
+        <tr>
+          <td>Taux Garden IT</td>
+          <td style="font-weight: bold; font-size: 130%;" ><span id="taux-garden-aff"></span></td>
+        </tr>
+        <tr>
+          <td>Taux EUR / CHF</td>
+          <td style="font-weight: bold; font-size: 130%;" ><span id="taux-eur-chf-aff-2"></span></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </article>
+    <aside>
+      <div style="text-align: center;">
+        <p>Garden IT Sàrl  
+          <br>Rue du Général Dufour, 20 1204 Genève</p>
+        <p></p>
+      </div>
+    </aside>
+  </div>
+</div>
+
 
 <script src="js/jspdf.debug.js"></script>
 <script src="js/html2canvas.min.js"></script>
@@ -172,6 +224,12 @@
     $('.btn-download').click(function(e){
       e.preventDefault();
       const element = document.getElementById('pdf');
+      html2pdf().from(element).set(options).save();
+    });
+
+    $('.btn-download-2').click(function(e){
+      e.preventDefault();
+      const element = document.getElementById('pdf2');
       html2pdf().from(element).set(options).save();
     });
 
@@ -332,9 +390,9 @@
 
       document.getElementById('wf-form-Simu').style.display='none';
       document.getElementById('invoice').style.display="block";
-
-
       
+
+      /* Affichage partie consultant */
       document.getElementById('nom-prenom-aff').innerHTML = nomPrenom;
       document.getElementById('tjm-aff').innerHTML = tjmEUR;
 
@@ -357,6 +415,16 @@
       
       document.getElementById('taux-eur-chf-aff').innerHTML = tauxEurChf;
 
+      /** Affichage partie interne */
+
+      document.getElementById('nom-prenom-aff-2').innerHTML = nomPrenom;
+      document.getElementById('age-aff').innerHTML = age;
+      document.getElementById('tjm-aff-2').innerHTML = tjmEUR;
+      document.getElementById('nb-jours-aff').innerHTML = nbJours;
+      document.getElementById('distance-aff').innerHTML = distance;
+      document.getElementById('categorie-aff-2').innerHTML = categorie;
+      document.getElementById('taux-garden-aff').innerHTML = tauxGardenIT;
+      document.getElementById('taux-eur-chf-aff-2').innerHTML = tauxEurChf;
   }
 
   function calculLPP(age){
