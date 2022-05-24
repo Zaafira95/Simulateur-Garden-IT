@@ -19,9 +19,11 @@
     <div class="formulaire">
 
         <img src="logoGardenIT.png" class="logo"> <br>
+        
+        <div><span id="marge-pot"></span></div><br>
 
         <label >Nom Prénom</label>
-        <div> <input type="text" value="NOM Prénom"
+        <div> <input type="text" value=""
                 maxlength="256" data-name="" placeholder="" id="nom-prenom" required=""> </div><br>
 
         <label >Taux Garden IT</label>
@@ -72,6 +74,9 @@
                 maxlength="256" data-name="" placeholder="" id="distance"> </div><br>
                
         <button type="button" onclick="afficher();" id="btn2">Simuler</button>
+        
+        <button type="button" onclick="afficherPdf();" id="btn">Voir le PDF</button>
+
       </div>
 </form>
 
@@ -407,7 +412,7 @@
       let margePotEUR = margePotCHF/tauxEurChf;
       let margePotEURArr = margePotEUR.toFixed(2);
       let margePotPourcent = margePotEUR/caEUR;
-      let margePotPourcentArr = margePotPourcent.toFixed(4);
+      margePotPourcentArr = margePotPourcent.toFixed(4);
       let margeAnnuelle = margePotEUR * 10.8;
       let margeAnnuelleArr = margeAnnuelle.toFixed(2);
       let margePotAffacturage = margePotEUR - (pourcAffacturage * caEUR);
@@ -415,9 +420,8 @@
       let margePotPourcent2 = margePotAffacturage/caEUR;
       let margePotPourcent2Arr = margePotPourcent2.toFixed(4);
 
-      document.getElementById('wf-form-Simu').style.display='none';
-      document.getElementById('invoice').style.display="block";
       
+      document.getElementById('marge-pot').innerHTML = "Marge potentielle : " + margePotPourcentArr*100 +" %";
 
       /* Affichage partie consultant */
       document.getElementById('nom-prenom-aff').innerHTML = nomPrenom;
@@ -456,6 +460,12 @@
       document.getElementById('taux-eur-chf-aff-2').innerHTML = tauxEurChf;
   }
 
+  function afficherPdf(){
+      document.getElementById('wf-form-Simu').style.display='none';
+      document.getElementById('invoice').style.display="block";
+
+  }
+
   function calculLPP(age){
       if(age>=0 && age<=24){return 0.00;}
       if(age>=25 && age<=34){return 0.07;}
@@ -463,6 +473,8 @@
       if(age>=45 && age<=54){return 0.15;}
       if(age>=55 && age<=65){return 0.18;}           
   }
+
+
 
   // DATA pour taux d'impot
 
