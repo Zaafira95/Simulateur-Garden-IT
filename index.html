@@ -27,13 +27,9 @@
         <div> <input type="text" value=""
                 maxlength="256" data-name="" placeholder="" id="nom-prenom" required=""> </div><br>
 
-        <label >Taux Garden IT</label>
-        <div> <input type="number" value="0.59"
-                maxlength="256" data-name="" placeholder="" id="taux-garden-it" onkeyup="afficher()"> </div><br>
-
-        <label >Taux EUR/CHF</label>
-        <div> <input type="number" value="1.03"
-                maxlength="256" data-name="" placeholder="" id="taux-eur-chf" onkeyup="afficher()"> </div><br>
+        <label >Age</label>
+        <div> <input type="number" value=""
+                maxlength="256" data-name="" placeholder="" id="age" onkeyup="afficher()"> </div><br>
 
         <label >Catégorie</label>
         <div><select id="categorie">
@@ -58,10 +54,6 @@
           <option value="H5">H5</option>
         </select><br><br></div>
 
-        <label >Age</label>
-        <div> <input type="number" value=""
-                maxlength="256" data-name="" placeholder="" id="age" onkeyup="afficher()"> </div><br>
-
         <label >TJM</label>
         <div> <input type="number" value=""
                 maxlength="256" data-name="" placeholder="" id="tjm" onkeyup="afficher()"> </div><br>
@@ -73,7 +65,15 @@
         <label >Distance Domicile / Travail (A/R en km)</label>
         <div> <input type="number" value="0"
                 maxlength="256" data-name="" placeholder="" id="distance" onkeyup="afficher()"> </div><br>
-        
+
+        <label >Taux Garden IT</label>
+        <div> <input type="number" value="0.59"
+                maxlength="256" data-name="" placeholder="" id="taux-garden-it" onkeyup="afficher()"> </div><br>
+
+        <label >Taux EUR/CHF</label>
+        <div> <input type="number" value="1.03"
+                maxlength="256" data-name="" placeholder="" id="taux-eur-chf" onkeyup="afficher()"> </div><br>
+
         <button type="button" onclick="afficherPdf();" id="btn">Simuler</button>
 
       </div>
